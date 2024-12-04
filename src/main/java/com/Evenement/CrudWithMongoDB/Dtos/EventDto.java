@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,5 +28,5 @@ public class EventDto {
     private int placeNumber;
     @NotNull(message = "Date should be not null")
     @NotEmpty(message = "Date should be not empty")
-    private LocalDate date;
+    private LocalDateTime date;
 }

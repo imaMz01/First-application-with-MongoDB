@@ -1,13 +1,10 @@
 package com.Evenement.CrudWithMongoDB.Entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
@@ -15,12 +12,14 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Document
-public class Event {
+@ToString
+public class Notification {
 
     @Id
     private String id;
-    private String name;
-    private String city;
-    private int placeNumber;
-    private LocalDateTime date;
+    @DBRef
+    private Guest guest;
+    private String eventName;
+    private LocalDateTime sendAt;
+    private Boolean sent;
 }
